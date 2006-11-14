@@ -54,7 +54,6 @@ def getStuff(descr):
     for s in stuff:
         if s["broken"]:
             print "examine", s["name"]
-##        print s
     pass
     
 
