@@ -1,0 +1,10 @@
+{ comments are enclosed by curly-braces;
+  no nested comments are allowed  }
+
+Seq (Seq d1 d2) d3 => Seq d1 (Seq d2 d3)
+  
+  
+SNF d => d
+
+  
+. { end of rules }

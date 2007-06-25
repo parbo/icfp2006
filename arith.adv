@@ -1,0 +1,19 @@
+{ addition }
+Add Z y => y;
+Add y Z => y;
+Add (S x) y => S (Add x y);
+Add z (Add x y) => Add (Add z x) y;
+
+{ multiplication }
+Mult Z y => Z;
+Mult y Z => Z;
+Mult (S x) y => Add y (Mult x y);
+Mult z (Mult x y) => Mult (Mult z x) y;
+Mult z (Add c d) => Add (Mult c z) (Mult d z);
+Add z (Mult (S x) y) => Add (Add (Mult x y) y) z;
+Add (Mult (S x) y) z => Add (Add (Mult x y) y) z;
+
+{ when all other computation is done }
+Compute x => x;
+
+. { end of rules }
