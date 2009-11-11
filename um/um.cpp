@@ -3,7 +3,7 @@
 #include <fstream>
 #include <ios>
 #include <time.h>
-
+#include <iterator>
 
 class MemPool
 {
@@ -157,6 +157,8 @@ int main(int argc, char** argv)
 
 	std::ifstream f(argv[1], std::ios::in|std::ios::binary);
 
+//	std::copy(std::istream_iterator<unsigned int>(f), std::istream_iterator<unsigned int>(), std::back_inserter(c));
+	
 	while (!f.eof())
 	{
 		unsigned char v[4];
@@ -171,5 +173,4 @@ int main(int argc, char** argv)
 	std::cout << "Finished in: " << after-before << " seconds" << std::endl;
 	return 0;
 }
-
     
